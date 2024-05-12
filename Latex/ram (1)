@@ -1,0 +1,345 @@
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%This is the LaTeX ARTICLE template for RSC journals
+%Copyright The Royal Society of Chemistry 2016
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[twoside,twocolumn,9pt,book]{article}
+\usepackage[graphicx]{realboxes}
+\usepackage{adjustbox}
+\usepackage{extsizes}
+\usepackage[super,sort&compress,comma]{natbib} 
+\usepackage[version=3]{mhchem}
+\usepackage[left=1.5cm, right=1.5cm, top=1.785cm, bottom=2.0cm]{geometry}
+\usepackage{balance}
+\usepackage{mathptmx}
+\usepackage{sectsty}
+\usepackage{graphicx} 
+\usepackage{lastpage}
+\usepackage{amssymb}
+\usepackage[format=plain,justification=justified,singlelinecheck=false,font={stretch=1.125,small,sf},labelfont=bf,labelsep=space]{caption}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{fnpos}
+\usepackage[english]{babel}
+\addto{\captionsenglish}{%
+  \renewcommand{\refname}{Notes and references}
+}
+\usepackage{array}
+\usepackage{droidsans}
+\usepackage{charter}
+\usepackage[T1]{fontenc}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{setspace}
+\usepackage[compact]{titlesec}
+\usepackage{hyperref}
+\usepackage{multirow,graphicx}
+%%%Please don't disable any packages in the preamble, as this may cause the template to display incorrectly.%%%
+\usepackage{braket}
+\usepackage{amsmath,bm}% for bm
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage{tablefootnote}
+%\usepackage{showframe}
+\usepackage{booktabs, makecell, multirow, threeparttable}
+%\renewcommand\tnote[1]{\textsuperscript{[#1]}}
+\usepackage{caption}
+\newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
+\newcommand{\down}{\sout{$\downarrow$}}
+\newcommand{\up}{\sout{$\uparrow$}}
+\newcommand{\zero}{\sout{\phantom{$\downarrow \negthickspace \uparrow$}}}
+\newcommand{\double}{\sout{$\downarrow \negthickspace \uparrow$}}
+\newcommand{\Lower}[1]{\smash{\lower 1.5ex \hbox{#1}}}   
+\usepackage{epstopdf}%This line makes .eps figures into .pdf - please comment out if not required.
+\usepackage{lscape}
+\definecolor{cream}{RGB}{222,217,201}
+%needed for highligthing
+\usepackage{xcolor, soul}
+%\sethlcolor{red}
+\newcommand\hlx[1]{\textcolor{red}{#1}}
+%\newcommand\hlx[1]{\colorbox{yellow}{\textcolor{red}{#1}}}
+\usepackage{longtable}
+
+
+\newcommand*{\kasia}[1]{{\textcolor{orange}{KB: #1}}}
+\newcommand*{\pawel}[1]{{\textcolor{red}{PT: #1}}}
+%\newcommand*{\onet}{\textbf{1t}}
+\setcounter{topnumber}{4}
+\setcounter{bottomnumber}{4}
+\setcounter{totalnumber}{4}
+%\renewcommand{\topfraction}{0.0}
+%\renewcommand{\bottomfraction}{0.01}
+%\renewcommand{\textfraction}{0.01}
+%\renewcommand{\floatpagefraction}{0.0}
+
+\begin{document}
+
+\pagestyle{fancy}
+\thispagestyle{plain}
+\fancypagestyle{plain}{
+%%%HEADER%%%
+\renewcommand{\headrulewidth}{0pt}
+}
+%%%END OF HEADER%%%
+
+%%%PAGE SETUP - Please do not change any commands within this section%%%
+\makeFNbottom
+\makeatletter
+\renewcommand\LARGE{\@setfontsize\LARGE{15pt}{17}}
+\renewcommand\Large{\@setfontsize\Large{12pt}{14}}
+\renewcommand\large{\@setfontsize\large{10pt}{12}}
+\renewcommand\footnotesize{\@setfontsize\footnotesize{7pt}{10}}
+\makeatother
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\renewcommand\footnoterule{\vspace*{1pt}% 
+\color{cream}\hrule width 3.5in height 0.4pt \color{black}\vspace*{5pt}} 
+\setcounter{secnumdepth}{5}
+
+\makeatletter 
+\renewcommand\@biblabel[1]{#1}            
+\renewcommand\@makefntext[1]% 
+{\noindent\makebox[0pt][r]{\@thefnmark\,}#1}
+\makeatother 
+\renewcommand{\figurename}{\small{Fig.}~}
+\sectionfont{\sffamily\Large}
+\subsectionfont{\normalsize}
+\subsubsectionfont{\bf}
+\setstretch{1.125} %In particular, please do not alter this line.
+\setlength{\skip\footins}{0.8cm}
+\setlength{\footnotesep}{0.25cm}
+\setlength{\jot}{10pt}
+\titlespacing*{\section}{0pt}{4pt}{4pt}
+\titlespacing*{\subsection}{0pt}{15pt}{1pt}
+%%%END OF PAGE SETUP%%%
+
+%%%FOOTER%%%
+\fancyfoot{}
+\fancyfoot[LO,RE]{\vspace{-7.1pt}\includegraphics[height=9pt]{head_foot/LF}}
+\fancyfoot[CO]{\vspace{-7.1pt}\hspace{11.9cm}\includegraphics{head_foot/RF}}
+\fancyfoot[CE]{\vspace{-7.2pt}\hspace{-13.2cm}\includegraphics{head_foot/RF}}
+\fancyfoot[RO]{\footnotesize{\sffamily{1--\pageref{LastPage} ~\textbar  \hspace{2pt}\thepage}}}
+\fancyfoot[LE]{\footnotesize{\sffamily{\thepage~\textbar\hspace{4.65cm} 1--\pageref{LastPage}}}}
+\fancyhead{}
+\renewcommand{\headrulewidth}{0pt} 
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\arrayrulewidth}{1pt}
+\setlength{\columnsep}{6.5mm}
+\setlength\bibsep{1pt}
+%%%END OF FOOTER%%%
+
+%%%FIGURE SETUP - please do not change any commands within this section%%%
+\makeatletter 
+\newlength{\figrulesep} 
+\setlength{\figrulesep}{0.5\textfloatsep} 
+
+\newcommand{\topfigrule}{\vspace*{-1pt}% 
+\noindent{\color{cream}\rule[-\figrulesep]{\columnwidth}{1.5pt}} }
+
+\newcommand{\botfigrule}{\vspace*{-2pt}% 
+\noindent{\color{cream}\rule[\figrulesep]{\columnwidth}{1.5pt}} }
+
+\newcommand{\dblfigrule}{\vspace*{-1pt}% 
+\noindent{\color{cream}\rule[-\figrulesep]{\textwidth}{1.5pt}} }
+
+\makeatother
+%%%END OF FIGURE SETUP%%%
+
+\newcommand{\STAB}[1]{\begin{tabular}{@{}c@{}}#1\end{tabular}}
+
+
+%%%TITLE, AUTHORS AND ABSTRACT%%%
+\twocolumn[
+  \begin{@twocolumnfalse}
+{\includegraphics[height=30pt]{head_foot/PCCP}\hfill%
+\raisebox{0pt}[0pt][0pt]{\includegraphics[height=55pt]{head_foot/RSC_LOGO_CMYK}}%
+\\[1ex]%
+\includegraphics[width=18.5cm]{head_foot/header_bar}}\par
+\vspace{1em}
+\sffamily
+\begin{tabular}{m{4.5cm} p{13.5cm} }
+
+\includegraphics{head_foot/DOI} & \noindent\LARGE{\textbf{Simple and efficient computational strategies for calculating orbital energies from pCCD and orbital-optimized pCCD methods}.\dag} \\%Article title goes here instead of the text "This is the title"
+\vspace{0.3cm} & \vspace{0.3cm} \\
+
+ & \noindent {Seyedehdelaram Jahani\textit{$^{a}$}, Somayeh Ahmadkhani\textit{$^{a}$}, Katharina Boguslawski{$^{a}$}, and Pawe\l{} Tecmer\textit{$^{a,*}$}} \\%Author names go here instead of "Full name", etc.
+
+\includegraphics{head_foot/dates} & \noindent\normalsize{
+abstract 
+} \\
+\end{tabular}
+
+ \end{@twocolumnfalse} \vspace{0.6cm} ]
+%%%END OF TITLE, AUTHORS AND ABSTRACT%%%
+
+%%%FONT SETUP - please do not change any commands within this section
+\renewcommand*\rmdefault{bch}\normalfont\upshape
+\rmfamily
+\section*{}
+\vspace{-1cm}%/quadr/
+
+
+%%%FOOTNOTES%%%
+
+\footnotetext{\textit{$^{a}$~Institute of Physics, Faculty of Physics, Astronomy, and Informatics, Nicolaus Copernicus University in Toru\'{n}, Grudzi{a}dzka 5, 87-100 Toru\'{n}, Poland; \\$^*$ ptecmer@fizyka.umk.pl}}
+
+%Please use \dag to cite the ESI in the main text of the article.
+%If you article does not have ESI please remove the the \dag symbol from the title and the footnotetext below.
+\footnotetext{\dag~Electronic Supplementary Information (ESI) available: BP86/def2-TZVP optimized structures of pentacene (xyz coordinates and 3-D structures with atom labels).
+See DOI: 10.1039/b000000x/12}
+%additional addresses can be cited as above using the lower-case letters, c, d, e... If all authors are from the same address, no letter is required
+
+
+%%%END OF FOOTNOTES%%%
+
+%%%MAIN TEXT%%%%
+\section{Introduction}
+During the past few decades, the field of organic photovoltaics (OPVs)~\cite{takimiya2014pi} has been studied in a wide range of materials, not essentially for their academic interest but also for their potential as an affordable energy technology to convert sunlight into electricity by applying a thin film of organic solar cells.~\cite{su2012organic}
+Also, these materials have improved the photo-voltage in devices where their power conversion efficiency now is over 19\%.~\cite{zhu2022single}
+Because of their environmental impact~\cite{zhu2022single}, low cost for electricity generation, and strong optical absorption~\cite{inganas2018organic}, OPVs can compete with the inorganic semiconductors based on silicon. The difference in the physics of organic semiconductors compared to their inorganic ones is the nature of the optically excited state.
+Rapidly, organic semiconducting materials are used as a pure and sustainable source of energy to play a major role in light-emitting diodes (OLEDs),~\cite{inganas1983photoelectrochemistry} field-effect transistors,~\cite{tang1986two, zhao2017molecular} photodiodes,~\cite{hou2018organic} and photovoltaic cells. A good point of OPV-based materials is the variety of organic molecules that can be utilised for building blocks of donors and acceptors. A crucial factor in designing organic-based donor and acceptor molecules is the  scrutinizing band gap which is the minimum energy required to promote an electron from its (HOMO) Highest Occupied Molecular Orbital to its (LUMO) Lowest Unoccupied Molecular Orbital. 
+\pawel{We need some transition here from general problem to QC.}
+
+
+While we can easily obtain it from the Hartree-Fock or DFAs-based methods~\cite{parr1979local, cohen2012challenges} using Koopman's~\cite{oleg09, day1974generalization, morrell1975calculation} or Janak's theorem,~\cite{janak_theorem} respectively, they don't always provide reliable results and also lead to the incorrect band gap.~\cite{} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Theory}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{pCCD}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The standard wave function-based methods won't provide us with the results for orbital energies. Geminal-based methods are a better understanding of quantum chemistry models, can represent a promising alternative to conventional state-of-the-art electronic structure methods and include the correlated wave function.~\cite{surjan1999geminals, tecmer2014, tecmer2022geminal, johnson_2013, johnson2017strategies, johnson2020richardson, johnson2022bivariational, faribault2022, fecteau2022, moisset2022} The used example in this work is pair Couple Cluster Doubles (pCCD) model,~\cite{tamar-pccd, boguslawski2014efficient} also known as Anti-symmetric Product of 1-reference orbital Geminal (AP1roG) ansatz.~\cite{limacher_2013}
+Such a wave function ansatz ~\cite{parr_1956, bardeen_1957, parks_1958, coleman_1965, miller1968} provide an undertaking alternative to conventional electronic structures, that are basically constructed from one electron functions to the non-dynamic and static model, which can be expressed
+%% Equation 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+\label{eqn:equation1}
+     {|\rm{pCCD}\rangle = {\mathrm{e}}^{{{\hat{T}}_{pCCD}}}{|{\phi}_{0}{\rangle}}},
+\end{equation}   
+%% End of Equation 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+where
+%% Equation 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\begin{equation}
+\label{eqn:equation2}
+     \hat{T}_{pCCD} = {\displaystyle\sum_{i}^{{n}_{occ}}  {\displaystyle\sum_{a}^{{n}_{virt} }} {c^a_i} {a^\dagger_a} {a^\dagger_{\bar{a}}} {a_{\bar{i}}} {a_i}  }
+\end{equation}
+%% End of Equation 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+in the above equation, the ${|\phi_{0}{\rangle}}$ is some independent-particle wave function, for example, the Hartree-Fock (HF) determinant, ${\hat{T}_{pCCD}}$ is a cluster operator that excites electron pairs, ${ \hat{a}_{p} ({\hat{a}^{\dagger}_{\bar{p}}})  }$ are the elementary annihilation (creation) operators for spin-up ${p}$ and spin-down ${(\bar{p})}$ electrons, and ${c^{a}_{i}}$ are the pCCD cluster amplitudes, where sum runs over all occupied ${i}$ and virtual ${a}$ orbitals, whose numbers are equivalent to the number of electron pairs. One advantage of using the exponential form is the proper (linear) scaling of this method with the size extensivity, while size consistency is guaranteed by applying an orbital optimization protocol.~\cite{boguslawski2014efficient, tamar-pccd, ps2-ap1rog, boguslawski2014nonvariational} The one-dimensional Hubbard model ~\cite{boguslawski2014efficient, tamar-pccd, ps2-ap1rog, boguslawski2014nonvariational} or molecules with stretched bonds,~\cite{tamar-pccd, pawel_jpca_2014, frozen-pccd, kasia-orbital-entanglement-ijqc-2015, ijqc-eratum, pawel-pccp-2015, garza2015actinide, ap1rog-lcc, boguslawski2017benchmark, filip-jctc-2019, state-specific-oopccd, pawel-yb2} even the heavy elements containing actinide ~\cite{garza2015actinide} or lanthanide ~\cite{pccd-ee-f0-actinides} atoms are frequent examples for geminal-based models.
+The pCCD methods with the possibility to optimize all orbitals can be a promising alternative to DFAs, because of its lowest computationally cost, and reliable tool for modeling electronic structures. This motivate us to develop pCCD methods to do it efficiently and reliable.\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Orbital energy from pCCD}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The most comprehensive way to give orbital energies a physical meaning is Koopman's theorem, which the ionization potentials (IP) relates to occupied orbitals and electron affinities (EA) to virtual orbitals. By adding or removing two electrons the energy differences are expressed by
+%% Equation 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\begin{equation}
+\label{eqn:equation3}
+      {\langle 0|{a^\dagger_i}{a^\dagger_j} \hat{H} {a_j}{a_i}| 0\rangle - \langle0|\hat{H}|0 \rangle = -{f}_i -{f}_j + V_{ijij} = -\varepsilon_{ij}}
+\end{equation}
+%% End of Equation 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Equation 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\begin{equation}
+\label{eqn:equation4}
+    {\langle 0|{a_b}{a_a} \hat{H} {a^\dagger_a}{a^\dagger_b}| 0\rangle - \langle0|\hat{H}|0 \rangle = {f}_a + {f}_b + V_{abab} = \varepsilon_{ab}}
+\end{equation}
+%% End of Equation 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+that correspond to both kind of orbital energies to each other from canonical Hartree-Fock. For instance, for virtual orbitals, $\varepsilon_{ab}$ equals to  sum of the Fock energy of each individual orbital plus the pair repulsion energy for electrons existing in orbital ${a}$ and ${b}$. For occupied orbitals, since the orbital pairing energy in the reference determinant is arbitrary, both equations are same and the Fock elements can account twice plus the pair repulsion energy can be pointed out as the ${\varepsilon_{ij}}$.
+%is subtracted and can be pointed out as the ${\varepsilon_{ij}}$. 
+%To access the difference in energy levels at the quantum level, 
+%However, more reliable orbital energies can be calculated from the ionization potential (IP) ~\cite{} and electron affinity (EA) ~\cite{} from Equation-of-motion (EOM)~\cite{} of a geminal reference wave function.~\cite{} Thus, 
+We require further development and computational scaling to calculate the orbital energies more accurate and reliable at the quantum level. To achieve this goal, we propose to drive and calculate orbital energies from pCCD-based methods using the Koopman's theorem. The approximate orbital energies can be determined by using the same eqs \ref{eqn:equation3} and \ref{eqn:equation4}. Thus, we express the molecular electronic Hamiltonian, which in second quantization by the form
+%% Equation 5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\begin{equation}
+      \label{eqn:equation5}
+    {{\hat{H}} ={\displaystyle\sum_{pq}^{k}}{h_{pq}}{\displaystyle\sum_{\sigma}}  {\hat{a}^{\dagger}_{{p}{\sigma}}} {{\hat{a}_{{q}{\sigma}}}}+ {\frac{1}{2}} {\displaystyle\sum_{pqrs}^{k}} {\langle {pq|rs}\rangle}{\displaystyle\sum_{{\sigma}{\tau}}} {{\hat{a}^{\dagger}_{{p}{\sigma}}}} {{\hat{a}^{\dagger}_{{q}{\tau}}}}          {{\hat{a}_{{s}{\tau}}}} {{\hat{a}_{{r}{\sigma}}}} }
+\end{equation}
+%% End of Equation 5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+in which ${h_{pq}}$ are the one-electron integrals and ${\langle {pq|rs}\rangle}$ are the tow-electron Coulomb integrals in physicist' notation. In the equation, the indices ${p}$, ${q}$,... indicate all occupied and virtual orbitals, while ${\sigma}$, ${\tau}$ introduce as spin variables ${( \alpha}$ or ${{\beta})}$. In the above equation we have divided the Hamiltonian into ${\hat{H}_{1}}$ and ${\hat{H}_{2}}$ to consider all the contractions between the terms. Then, for the first part of Hamilitonian
+%% Equation 6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\begin{equation}
+      \label{eqn:equation6}
+      {\displaystyle\sum_{pq} h_{pq} \langle {\color{red}{i^\dagger}} {\color{blue}{\bar{j}^\dagger}} \{ {\color{green}{p^\dagger}} {\color{red}{q}} \} {\color{blue}{\bar{j}}} {\color{green}{i}} \rangle } + \langle {\color{blue}{i^\dagger}} {\color{red}{\bar{j}^\dagger}} \{ {\color{green}{\bar{p}^\dagger}} {\color{red}{\bar{q}}} \} {\color{green}{\bar{j}}} {\color{blue}{i}} \rangle = -{f_{\color{green}{i}{\color{red}{i}}}}- {f_{\color{green}{\bar{j}}{\color{red}{\bar{j}}}}}
+\end{equation}
+%% End of Equation 6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+where each color indicates we have the contraction between two terms, while the second part of Hamiltonian determined by
+%% Equation 7 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\begin{equation}
+      \label{eqn:equation7}
+    {\displaystyle\sum_{pqrs}} {\langle {p{\bar{q}}}|{r{\bar{s}}} \rangle} {\langle {{\color{red}{i^\dagger}}} {\color{blue}{\bar{j}^\dagger}} \{ {\color{pink}{p^\dagger}} {\color{green}{\bar{q}^\dagger}} {\color{blue}{\bar{s}}} {\color{red}{r}} \} {\color{green}{\bar{j}}} {\color{pink}{i}}  \rangle} = {\langle { {\color{pink}{i}} {\color{green}{\bar{j}}} {|} {\color{red}{i}} {\color{blue}{\bar{j}}}    } \rangle},
+    \end{equation}
+%% End of Equation 7 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Equation 8 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\begin{equation}
+      \label{eqn:equation8}    
+    {\displaystyle\sum_{pqrs}} {\langle {\bar{p}q}|{\bar{r}s} \rangle} {\langle {{\color{red}{i^\dagger}}} {\color{blue}{\bar{j}^\dagger}} \{ {\color{pink}{\bar{p}^\dagger}} {\color{green}{q^\dagger}} {\color{red}{s}} {\color{blue}{\bar{r}}} \} {\color{pink}{\bar{j}}} {\color{green}{i}}  \rangle} = {\langle { {\color{pink}{\bar{j}}} {\color{green}{i}} | {\color{blue}{\bar{j}}} {\color{red}{i}}    } \rangle}.
+\end{equation}
+%% End of Equation 8 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Thus, the energy for occupied orbitals correspond to sum over all Fock operator plus the Coulomb part and the exchange terms.
+%% Equation 9 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\begin{equation}
+      \label{eqn:equation9}
+ {\varepsilon_{{i}{\bar{j}}}} = {{ f_{ii} + f_{\bar{j}\bar{j}}} - { {2 { \langle{i {\bar{j}}} | {i {\bar{j}} }\rangle } + { { \langle{\bar{j}i} | {i {\bar{j}} }\rangle }}   }  }},
+\end{equation}
+%% End of Equation 9 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+this equation can be interpreted by
+%% Equation 10 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\begin{equation}
+      \label{eqn:equation10}
+ {\varepsilon_{{pq}}} = {{Fock} - {2{g}_{pqpq} + exchange  }}.
+\end{equation}
+%% End of Equation 10 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Furthermore, $-\varepsilon_{ij}$ can be defined as a physical meaning for double ionization potential (DIP) in which is sum over of first and second ionization potential, and $\varepsilon_{ab}$ can be expressed as double electron affinities. Since the approximation of electron affinities by Fock orbital energies is basically less accurate and unstable, we don't calculate the results for $\varepsilon_{ab}$ concerning the virtual energies here.
+
+This work is organized as follows. In Section 2, we illustrate the computational methodology. Section 3 summaries numerical results and a statistical analysis. Eventually, we conclude in Section 4.
+
+%% Figure 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{figure}
+%\centering
+%\includegraphics[scale=0.23]{figure1.png}
+%\caption{Lewis structures of PANIs. (a) leucoemeraldine, (b) emeraldine, and (c) pernigraniline drawn with ChemPlot.~\cite{chemplot}}\label{fig:PANI-lewis-structures}
+%\end{figure} 
+ %% End of Figure 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Computational details}\label{sec:comput-det}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In this work, the geometry optimization and vibrational frequency calculations for penthacene were carried out by Turbomole6.6~\cite{turbomole_original, turbomole} software package employing def2-TZVP basis set.~\cite{turbomole-def2-tzvp} The optimized xyz structure is given in Tables S1 in the ESI${\dagger}$. Then, we used this optimised structure for the all calculations.
+%of orbital optimized of pCCD~\cite{tecmer2022geminal, limacher_2013, tamar-pcc} obtained with a developer version of the \textsc{PyBEST}.~\cite{pybest-paper, pybest-gpu-jctc-2023} using the cc-pVQZ basis set.~\cite{basis_dunning}
+We benchmark the performance of the ionization potential (IP) using the IP-EOM-pCCD method ~\cite{} and double ionization potential (DIP) using the DIP-EOM-pCCD~\cite{boguslawski2021open} obtained with the existing implementation in a developer version of the \textsc{PyBEST}.~\cite{pybest-paper, pybest-gpu-jctc-2023} using the cc-pVQZ basis set.~\cite{basis_dunning} The ionization energies were performed in the space of the one-hole (labeled as 1h) and two-hole-one-particle (labeled as 2h1p) states. We also, performed the ionization potential using Koopman's theorem and two times Koopman's suggested by Peter Limacher.~\cite{piotrus-orbital-energies} To interpret the type of molecular orbitals during all calculations we investigated employing (i) canonical Hartree-Fock orbitals (abbreviated as HF), (ii) natural orbital optimized pair Couple Cluster Double (abbreviated as oo-pCCD).\\
+Furthermore, our work includes eight neutral atoms that we introduced a frozen core as follows: Zero for He, one for Be and Ne, means the 1s orbitals were kept frozen, for Mg and Ar we count five, means the 1s, 2s, and one electron from 2p orbitals, and for Ca, Zn, and Kr the 1s, 2s, and five electrons from 2p orbitals were kept frozen and it's nine. Then, we compared the performance of all above mentioned methods with the experimental reference data.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Results and discussion}\label{sec:results}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{IP}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%table(fix me)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{DIP}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+%%%%%table(fix me)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions}\label{sec:conclusions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conflicts of interest}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+There are no conflicts to declare.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Acknowledgment}\label{sec:acknowledgement}
+S.J. and P.T.~acknowledge financial support from the SONATA BIS research grant from the National Science Centre, Poland (Grant No. 2021/42/E/ST4/00302). P.T.~acknowledges the scholarship for outstanding young scientists from the Ministry of Science and Higher Education.
+%The research leading to these results has received funding from the Norway Grants 2014--2021 via the National Centre for Research and Development.
+
+
+%Calculations have been carried out using resources provided by the Wroclaw Centre for Networking and Supercomputing (http://wcss.pl), grant no. 411. 
+
+\bibliography{rsc} %You need to replace "rsc" on this line with the name of your .bib file
+\bibliographystyle{rsc} %the RSC's .bst file
+
+\end{document}
+
